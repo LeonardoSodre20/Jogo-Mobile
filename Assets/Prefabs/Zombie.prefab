@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3559482414705245412}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionZombie: 0
-  speedZombie: 2
+  speedZombie: 3
   flipZombie: {fileID: 3559482414705245400}
 --- !u!50 &3559482414705245412
 Rigidbody2D:

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C750242E-6E5D-AD94-B12B-93FAF1604DBE}</ProjectGuid>
+    <ProjectGuid>{828F7B92-4A5D-DFDF-D30D-2C8D3AAAF89D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -64,48 +64,45 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\CanvasControll.cs" />
-    <Compile Include="Assets\Scripts\CoinController.cs" />
-    <Compile Include="Assets\Scripts\Enemys.cs" />
-    <Compile Include="Assets\Scripts\GameControll.cs" />
+    <Compile Include="Assets\Scripts\CoinManager.cs" />
+    <Compile Include="Assets\Scripts\ManagerGame.cs" />
     <Compile Include="Assets\Scripts\MoveBarrel.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Pontuation.cs" />
     <Compile Include="Assets\Scripts\SawController.cs" />
     <Compile Include="Assets\Scripts\ZombieController.cs" />
     <None Include="Assets\UI\png\README.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Leona/Documents/Faculdade/5ºSemestre/Jogos para Dispositivos Móveis/Jogo-Mobile/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

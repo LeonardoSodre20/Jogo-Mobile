@@ -28,5 +28,10 @@ public class ZombieController : MonoBehaviour
         {
             directionZombie = !directionZombie;
         }
+
+        if(collision.gameObject.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

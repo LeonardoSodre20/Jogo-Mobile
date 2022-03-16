@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private bool dir;
-    public Player player;
+    Player player;
     SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,8 @@ public class Bullet : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject);
     }
+
+
 }

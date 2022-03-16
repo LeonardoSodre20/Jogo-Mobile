@@ -20,9 +20,7 @@ public class Player : MonoBehaviour
     public Transform startL;
     public Animator anima;
     public bool right;
-    public int qtdCoins;
-    public Text txtPontuation;
-    
+    public ManagerGame managerGame;
     
     // Start is called before the first frame update
     void Start()
@@ -53,7 +51,7 @@ public class Player : MonoBehaviour
         {
             particle.gameObject.SetActive(false);
             Shoot();
-            anima.SetTrigger("shoot");
+            anima.SetBool("shoot", true);
             timeC = 0;
             m.startColor = Color.green;
         }
@@ -76,12 +74,19 @@ public class Player : MonoBehaviour
         {
             horizontalInput = 0;
             anima.SetBool("run", false);
+           
             //anima.SetFloat("run", Mathf.Abs(horizontalInput));
         }
+
+     
+        
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             Jump();
+            
         }
+        
+    
 
     }
     void Jump()
@@ -89,36 +94,32 @@ public class Player : MonoBehaviour
         rb2d.velocity = new Vector2(rb2d.velocity.x, speed);
        
         grounded = false;
+        anima.SetBool("jump", true);
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "ground")
         {
             grounded = true;
+            anima.SetBool("jump", false);
         }
-        if (collision.gameObject.tag == "coin")
-        {
-            Destroy(collision.gameObject);
-        }
-
         if(collision.gameObject.tag == "toxic")
         {
             Destroy(player.gameObject);
-            qtdCoins++;
+            
+        }
+        if(collision.gameObject.tag == "zombie")
+        {
+            managerGame.lifePlayer();
+        }
+
+        if(collision.gameObject.tag == "damage")
+        {
+            Destroy(this.gameObject);
         }
         
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "coin")
-        {
-            Destroy(collision.gameObject);
-            qtdCoins++;
-            txtPontuation.text = "Pontuação: " + qtdCoins.ToString();
-        }
-    }
-
 
     void Shoot()
     {

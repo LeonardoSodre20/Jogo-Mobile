@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7874028219985567167}
   - component: {fileID: 7874028219985567164}
   - component: {fileID: 7874028219985567165}
+  - component: {fileID: 4049791205143073355}
   m_Layer: 0
   m_Name: Coin
   m_TagString: coin
@@ -123,3 +124,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSaw: {x: 0, y: 2, z: 0}
   speedRotation: 1
+--- !u!114 &4049791205143073355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874028219985567138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041d34e60ee3bfa40999c7b555b18d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinObj: {fileID: 7874028219985567138}
