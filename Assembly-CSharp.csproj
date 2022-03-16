@@ -65,9 +65,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\CanvasControll.cs" />
+    <Compile Include="Assets\Scripts\CoinController.cs" />
     <Compile Include="Assets\Scripts\Enemys.cs" />
     <Compile Include="Assets\Scripts\GameControll.cs" />
+    <Compile Include="Assets\Scripts\MoveBarrel.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Pontuation.cs" />
+    <Compile Include="Assets\Scripts\SawController.cs" />
+    <Compile Include="Assets\Scripts\ZombieController.cs" />
+    <None Include="Assets\UI\png\README.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/00105029/Documents/Projeto_Mobile01/Projeto_Mobile/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

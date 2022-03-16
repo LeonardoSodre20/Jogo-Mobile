@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
     public Transform startL;
     public Animator anima;
     public bool right;
+    public int qtdCoins;
+    public Text txtPontuation;
     
     
     // Start is called before the first frame update
@@ -101,8 +104,19 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "toxic")
         {
             Destroy(player.gameObject);
+            qtdCoins++;
         }
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "coin")
+        {
+            Destroy(collision.gameObject);
+            qtdCoins++;
+            txtPontuation.text = "Pontuação: " + qtdCoins.ToString();
+        }
     }
 
 

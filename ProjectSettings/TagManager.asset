@@ -11,6 +11,9 @@ TagManager:
   - tranformPositive
   - directionMove
   - enemy
+  - direction_barrel
+  - coin
+  - direction_zombie
   layers:
   - Default
   - TransparentFX
