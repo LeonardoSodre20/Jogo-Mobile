@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public Transform startL;
     public Animator anima;
     public bool right;
+    public float impulsePlayer;
     public ManagerGame managerGame;
     
     // Start is called before the first frame update
@@ -117,6 +118,11 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "damage")
         {
             Destroy(this.gameObject);
+        }
+
+        if(collision.gameObject.tag == "Impulse")
+        {
+            rb2d.AddForce(new Vector2(0, impulsePlayer), ForceMode2D.Impulse);
         }
         
     }

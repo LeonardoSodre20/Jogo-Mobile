@@ -9,12 +9,8 @@ public class ManagerGame : MonoBehaviour
     public Text txtPontuation;
     public Image lifeBar;
     public float damage;
-    
-    void Start()
-    {
-        
-    }
-
+    public GameObject panelGameOver;
+    public GameObject playerObj;
     
     void Update()
     {
@@ -32,6 +28,13 @@ public class ManagerGame : MonoBehaviour
     public void lifePlayer()
     {
         lifeBar.fillAmount -= damage;
+
+        if(lifeBar.fillAmount <=0)
+        {
+            panelGameOver.SetActive(true);
+            Destroy(playerObj.gameObject);
+            Time.timeScale = 0;
+        }
         
     }
 }
