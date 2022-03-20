@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -15,13 +16,17 @@ public class Player : MonoBehaviour
     float horizontalInput;
     public bool grounded;
     public SpriteRenderer sprite;
-    public GameObject[] shoots;
+    public GameObject shoot;
+    public GameObject shootSpecial;
     public Transform startR;
     public Transform startL;
     public Animator anima;
     public bool right;
     public float impulsePlayer;
     public ManagerGame managerGame;
+    public Joystick joystick;
+    public static bool countTime;
+    public GameObject panelGameOver;
     
     // Start is called before the first frame update
     void Start()
@@ -39,33 +44,34 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.X))
-        {
-            particle.gameObject.SetActive(true);
-            timeC += Time.deltaTime;
-            if (timeC >= 2)
-            {
-                m.startColor = Color.red;
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            particle.gameObject.SetActive(false);
-            Shoot();
-            anima.SetBool("shoot", true);
-            timeC = 0;
-            m.startColor = Color.green;
-        }
+        //if (Input.GetKey(KeyCode.X))
+        //{
+        //    particle.gameObject.SetActive(true);
+        //    timeC += Time.deltaTime;
+        //    if (timeC >= 2)
+        //    {
+        //        m.startColor = Color.red;
+        //    }
+        //}
+        //if (Input.GetKeyUp(KeyCode.X))
+        //{
+        //    particle.gameObject.SetActive(false);
+        //    Shoot();
+        //    anima.SetBool("shoot", true);
+        //    timeC = 0;
+        //    m.startColor = Color.green;
+        //}
         cam.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
-        horizontalInput = Input.GetAxis("Horizontal");
+        //horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = joystick.Horizontal;
         rb2d.velocity = new Vector2(horizontalInput * speed, rb2d.velocity.y);
-        if (horizontalInput > 0.01f)
+        if (joystick.Horizontal >= 0.2f)
         {
             //anima.SetFloat("run", Mathf.Abs(horizontalInput));
             anima.SetBool("run", true);
             sprite.flipX = false;
         }
-        else if (horizontalInput < -0.01f)
+        else if (joystick.Horizontal <= -0.2f)
         {
             //anima.SetFloat("run", Mathf.Abs(horizontalInput));
             anima.SetBool("run", true);
@@ -79,17 +85,22 @@ public class Player : MonoBehaviour
             //anima.SetFloat("run", Mathf.Abs(horizontalInput));
         }
 
-     
-        
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if(joystick.Vertical >= 0.2f && grounded)
         {
             Jump();
-            
         }
-        
-    
 
+        if(countTime)
+        {
+            timeC += Time.deltaTime;
+            if(timeC >= 2)
+            {
+                m.startColor = Color.red;
+            }
+        }
     }
+
+  
     void Jump()
     {
         rb2d.velocity = new Vector2(rb2d.velocity.x, speed);
@@ -108,6 +119,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "toxic")
         {
             Destroy(player.gameObject);
+            panelGameOver.SetActive(true);
             
         }
         if(collision.gameObject.tag == "zombie")
@@ -118,34 +130,43 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "damage")
         {
             Destroy(this.gameObject);
+            panelGameOver.SetActive(true);
         }
 
         if(collision.gameObject.tag == "Impulse")
         {
             rb2d.AddForce(new Vector2(0, impulsePlayer), ForceMode2D.Impulse);
         }
+
+        if(collision.gameObject.tag == "DoorOpen")
+        {
+            Debug.Log("Colidiu com a DoorOpen");
+            SceneManager.LoadScene("ScreenVictory");
+        }
         
     }
 
-    void Shoot()
+    public void Shoot()
     {
         if (!sprite.flipX)
         {
-            if (timeC < 1)
-                Instantiate(shoots[0], startR);
-            else if (timeC < 2)
-                Instantiate(shoots[1], startR);
-            else
-                Instantiate(shoots[2], startR);
+            Instantiate(shoot, startR);
         }
         else
         {
-            if (timeC < 1)
-                Instantiate(shoots[0], startL);
-            else if (timeC < 2)
-                Instantiate(shoots[1], startL);
-            else
-                Instantiate(shoots[2], startL);
+            Instantiate(shoot, startL);
+        }
+    }
+
+    public void ShootSpecial()
+    {
+        if(!sprite.flipX)
+        {
+            Instantiate(shootSpecial, startR);
+        }
+        else
+        {
+            Instantiate(shootSpecial, startL);
         }
     }
 }

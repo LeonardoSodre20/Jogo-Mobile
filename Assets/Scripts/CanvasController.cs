@@ -7,13 +7,19 @@ using UnityEngine.SceneManagement;
 public class CanvasController : MonoBehaviour
 {
     
-    void Update()
+    public void RestartScene(string sceneGame)
     {
-        
+        SceneManager.LoadScene(sceneGame);
+        Time.timeScale = 1;
     }
 
     public void NextScene(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
+    }
+
+    public void Home(string sceneMenu)
+    {
+        SceneManager.LoadScene(sceneMenu);
     }
 }
